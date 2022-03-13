@@ -1,0 +1,52 @@
+//Variables
+$color-uwu:#5fdd46;
+$color-unu:#c43d1e;
+$color-nwn:#43b2e6;
+
+//Mixins
+@mixin Sombras{
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+@mixin bordes{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+//Mapa
+
+$ColoresM:(
+    "black":#000000,
+    "pink":#f53ff5,
+);
+
+@each $red, $color in $ColoresM{
+    .map--#{$red}{
+        color:$color;
+    }
+}
+
+.uwu{
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #fff;
+    background: $color-uwu;
+    @include Sombras;
+    @include bordes;
+}
+.unu{
+    @extend.uwu;
+    background: $color-unu;
+}
+.nwn{
+    @extend.uwu;
+    background: $color-nwn;
+}
